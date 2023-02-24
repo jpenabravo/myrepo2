@@ -21,6 +21,7 @@ The following filters were used:
 ```{r, message=FALSE}
 library(tidyverse)
 library(gt)
+library(scales)
 ```
 
 ## Load data
@@ -70,4 +71,50 @@ fl_health_finder_s %>%
   count(`Facility Type`) %>% 
   rename("count" = n) %>% 
   gt()
+```
+
+## Create a plot of the data
+
+```{r plots}
+
+fl_health_finder_s %>%
+  mutate(`Facility Type` = factor(`Facility Type`)) %>% 
+  drop_na() %>% 
+  filter(`Facility Type` %in% facilty_types) %>% 
+  count(`Facility Type`) %>% 
+  rename("count" = n) %>% 
+  ggplot(aes(x = reorder(`Facility Type`, count), y = count)) +
+  geom_col() +
+  geom_text(aes(label = comma(count)), nudge_y = 50) +
+  coord_flip() +
+  theme_light() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(), 
+        plot.title.position = "plot") +
+  scale_y_continuous(n.breaks = 8, labels = comma_format()) +
+  labs(title = "Number of Duval County Licensed Health Care Facilities by Facility Type")
+
+```
+
+## Plot for counts below 200
+
+```{r plots 2}
+
+fl_health_finder_s %>%
+  mutate(`Facility Type` = factor(`Facility Type`)) %>% 
+  drop_na() %>% 
+  filter(`Facility Type` %in% facilty_types) %>% 
+  count(`Facility Type`) %>% 
+  rename("count" = n) %>%
+  filter(count < 200) %>% 
+  ggplot(aes(x = reorder(`Facility Type`, count), y = count)) +
+  geom_col() +
+  geom_text(aes(label = comma(count)), nudge_y = 5) +
+  coord_flip() +
+  theme_light() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(), 
+        plot.title.position = "plot") +
+  scale_y_continuous(n.breaks = 8, labels = comma_format()) +
+  labs(title = "Number of Duval County Licensed Health Care Facilities by Facility Type", subtitle = "Facility types below the 200 count")
 ```

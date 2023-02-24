@@ -166,7 +166,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="load-data" class="level2">
@@ -218,12 +219,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="sxcqittmhz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ojdquseori" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#sxcqittmhz) .gt_table {
+:where(#ojdquseori) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -248,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_heading {
+:where(#ojdquseori) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -260,12 +261,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_caption {
+:where(#ojdquseori) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#sxcqittmhz) .gt_title {
+:where(#ojdquseori) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -277,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#sxcqittmhz) .gt_subtitle {
+:where(#ojdquseori) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -289,13 +290,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#sxcqittmhz) .gt_bottom_border {
+:where(#ojdquseori) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_col_headings {
+:where(#ojdquseori) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -310,7 +311,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_col_heading {
+:where(#ojdquseori) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -330,7 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#sxcqittmhz) .gt_column_spanner_outer {
+:where(#ojdquseori) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,15 +343,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#sxcqittmhz) .gt_column_spanner_outer:first-child {
+:where(#ojdquseori) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#sxcqittmhz) .gt_column_spanner_outer:last-child {
+:where(#ojdquseori) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#sxcqittmhz) .gt_column_spanner {
+:where(#ojdquseori) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -362,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#sxcqittmhz) .gt_group_heading {
+:where(#ojdquseori) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -388,7 +389,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#sxcqittmhz) .gt_empty_group_heading {
+:where(#ojdquseori) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -403,15 +404,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#sxcqittmhz) .gt_from_md > :first-child {
+:where(#ojdquseori) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#sxcqittmhz) .gt_from_md > :last-child {
+:where(#ojdquseori) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#sxcqittmhz) .gt_row {
+:where(#ojdquseori) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -430,7 +431,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#sxcqittmhz) .gt_stub {
+:where(#ojdquseori) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -443,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sxcqittmhz) .gt_stub_row_group {
+:where(#ojdquseori) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -457,11 +458,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#sxcqittmhz) .gt_row_group_first td {
+:where(#ojdquseori) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#sxcqittmhz) .gt_summary_row {
+:where(#ojdquseori) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -471,16 +472,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sxcqittmhz) .gt_first_summary_row {
+:where(#ojdquseori) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_first_summary_row.thick {
+:where(#ojdquseori) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#sxcqittmhz) .gt_last_summary_row {
+:where(#ojdquseori) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -490,7 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_grand_summary_row {
+:where(#ojdquseori) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -500,7 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sxcqittmhz) .gt_first_grand_summary_row {
+:where(#ojdquseori) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -510,11 +511,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_striped {
+:where(#ojdquseori) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#sxcqittmhz) .gt_table_body {
+:where(#ojdquseori) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -523,7 +524,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_footnotes {
+:where(#ojdquseori) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -537,7 +538,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_footnote {
+:where(#ojdquseori) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -546,7 +547,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sxcqittmhz) .gt_sourcenotes {
+:where(#ojdquseori) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -560,7 +561,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sxcqittmhz) .gt_sourcenote {
+:where(#ojdquseori) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -568,64 +569,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sxcqittmhz) .gt_left {
+:where(#ojdquseori) .gt_left {
   text-align: left;
 }
 
-:where(#sxcqittmhz) .gt_center {
+:where(#ojdquseori) .gt_center {
   text-align: center;
 }
 
-:where(#sxcqittmhz) .gt_right {
+:where(#ojdquseori) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#sxcqittmhz) .gt_font_normal {
+:where(#ojdquseori) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#sxcqittmhz) .gt_font_bold {
+:where(#ojdquseori) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#sxcqittmhz) .gt_font_italic {
+:where(#ojdquseori) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#sxcqittmhz) .gt_super {
+:where(#ojdquseori) .gt_super {
   font-size: 65%;
 }
 
-:where(#sxcqittmhz) .gt_footnote_marks {
+:where(#ojdquseori) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#sxcqittmhz) .gt_asterisk {
+:where(#ojdquseori) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#sxcqittmhz) .gt_indent_1 {
+:where(#ojdquseori) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#sxcqittmhz) .gt_indent_2 {
+:where(#ojdquseori) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#sxcqittmhz) .gt_indent_3 {
+:where(#ojdquseori) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#sxcqittmhz) .gt_indent_4 {
+:where(#ojdquseori) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#sxcqittmhz) .gt_indent_5 {
+:where(#ojdquseori) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -671,6 +672,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
 </table>
 </div>
+</div>
+</div>
+</section>
+<section id="create-a-plot-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-plot-of-the-data">Create a plot of the data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fl_health_finder_s <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">factor</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span> <span class="sc">%in%</span> facilty_types) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"count"</span> <span class="ot">=</span> n) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span>, count), <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">comma</span>(count)), <span class="at">nudge_y =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">8</span>, <span class="at">labels =</span> <span class="fu">comma_format</span>()) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Duval County Licensed Health Care Facilities by Facility Type"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2023-02-21_FLHealthFinder_files/figure-html/plots-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="plot-for-counts-below-200" class="level2">
+<h2 class="anchored" data-anchor-id="plot-for-counts-below-200">Plot for counts below 200</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fl_health_finder_s <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">factor</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span> <span class="sc">%in%</span> facilty_types) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"count"</span> <span class="ot">=</span> n) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count <span class="sc">&lt;</span> <span class="dv">200</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(<span class="st">`</span><span class="at">Facility Type</span><span class="st">`</span>, count), <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">comma</span>(count)), <span class="at">nudge_y =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">8</span>, <span class="at">labels =</span> <span class="fu">comma_format</span>()) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Duval County Licensed Health Care Facilities by Facility Type"</span>, <span class="at">subtitle =</span> <span class="st">"Facility types below the 200 count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2023-02-21_FLHealthFinder_files/figure-html/plots 2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
