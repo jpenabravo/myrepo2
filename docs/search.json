@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "2023-02-21_FLHealthFinder.html",
+    "href": "2023-02-21_FLHealthFinder.html",
+    "title": "Duval’s FloridaHealthFinder Data",
+    "section": "",
+    "text": "a service of the Agency for Health Care Administration)\nThe code below takes the .csv file exported from the Facility/Provider Locator and creates a table with the counts by facility type used Duval County’s Community Health Assessment.\nThe following filters were used:\n\nFacility/Provider Type: “ALL TYPES”\nCounty: “Duval”"
+  },
+  {
+    "objectID": "2023-02-21_FLHealthFinder.html#load-packages",
+    "href": "2023-02-21_FLHealthFinder.html#load-packages",
+    "title": "Duval’s FloridaHealthFinder Data",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(gt)"
+  },
+  {
+    "objectID": "2023-02-21_FLHealthFinder.html#load-data",
+    "href": "2023-02-21_FLHealthFinder.html#load-data",
+    "title": "Duval’s FloridaHealthFinder Data",
+    "section": "Load data",
+    "text": "Load data\n\nfl_health_finder <- read_csv(\"data/2023-02-21_FloridaHealthFinder-FacilityLocator.csv\")"
+  },
+  {
+    "objectID": "2023-02-21_FLHealthFinder.html#create-table",
+    "href": "2023-02-21_FLHealthFinder.html#create-table",
+    "title": "Duval’s FloridaHealthFinder Data",
+    "section": "Create table",
+    "text": "Create table\n\n# Create a new dataframe with the three columns needed\n\nfl_health_finder_s <- fl_health_finder %>%\n  select(`Facility Type`, Name, `License Status`)\n\n# Create the counts by the selection of facility types:\n\n#'Adult Day Care Center\n#'Ambulatory Surgical Care Center\n#'Assisted Living Facility\n#'Birthing Center\n#'Clinical Laboratory\n#'Health Care Clinic\n#'Home Health Agency\n#'Home Medical Equipment Provider\n#'Hospice\n#'Hospitals\n#'Nursing Homes\n#'Rehabilitation Agency\n#'Skilled Nursing Agency\n#'Transitional Living Facility\n\n# Before creating the table, create a vector with the correct facility types:\n\nfacilty_types <-\n  fl_health_finder_s %>%\n  drop_na() %>%  # start by dropping empty rows (1)\n  distinct(`Facility Type`) %>% #find unique facility types\n  pull() %>% # create a vector\n  sort() %>% # sort in alphabetical order\n  .[-c(1,3,4,9:11,13,14,16,18,21,22,24:26,28)] # removed from vector\n\nfl_health_finder_s %>%\n  drop_na() %>% \n  filter(`Facility Type` %in% facilty_types) %>% \n  count(`Facility Type`) %>% \n  rename(\"count\" = n) %>% \n  gt()\n\n\n\n\n\n  \n  \n    \n      Facility Type\n      count\n    \n  \n  \n    Adult Day Care Center\n8\n    Ambulatory Surgical Center\n19\n    Assisted Living Facility\n76\n    Birth Center\n3\n    Clinical Laboratory\n1243\n    Health Care Clinic\n65\n    Home Health Agency\n106\n    Home Medical Equipment Provider\n37\n    Hospice\n2\n    Hospital\n16\n    Nursing Home\n33\n    Rehabilitation Agency\n8\n    Skilled Nursing Unit\n1\n    Transitional Living Facility\n1"
+  }
+]

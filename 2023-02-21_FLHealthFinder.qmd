@@ -1,0 +1,73 @@
+---
+title: "Duval's FloridaHealthFinder Data"
+format: html
+editor: visual
+---
+
+## FloridaHealthFinder
+
+*a service of the Agency for Health Care Administration)*
+
+The code below takes the .csv file exported from the **Facility/Provider Locator** and creates a table with the counts by facility type used Duval County's Community Health Assessment.
+
+The following filters were used:
+
+-   Facility/Provider Type: "ALL TYPES"
+
+-   County: "Duval"
+
+## Load packages
+
+```{r, message=FALSE}
+library(tidyverse)
+library(gt)
+```
+
+## Load data
+
+```{r, message=FALSE, warning=FALSE}
+fl_health_finder <- read_csv("data/2023-02-21_FloridaHealthFinder-FacilityLocator.csv")
+```
+
+## Create table
+
+```{r}
+# Create a new dataframe with the three columns needed
+
+fl_health_finder_s <- fl_health_finder %>%
+  select(`Facility Type`, Name, `License Status`)
+
+# Create the counts by the selection of facility types:
+
+#'Adult Day Care Center
+#'Ambulatory Surgical Care Center
+#'Assisted Living Facility
+#'Birthing Center
+#'Clinical Laboratory
+#'Health Care Clinic
+#'Home Health Agency
+#'Home Medical Equipment Provider
+#'Hospice
+#'Hospitals
+#'Nursing Homes
+#'Rehabilitation Agency
+#'Skilled Nursing Agency
+#'Transitional Living Facility
+
+# Before creating the table, create a vector with the correct facility types:
+
+facilty_types <-
+  fl_health_finder_s %>%
+  drop_na() %>%  # start by dropping empty rows (1)
+  distinct(`Facility Type`) %>% #find unique facility types
+  pull() %>% # create a vector
+  sort() %>% # sort in alphabetical order
+  .[-c(1,3,4,9:11,13,14,16,18,21,22,24:26,28)] # removed from vector
+
+fl_health_finder_s %>%
+  drop_na() %>% 
+  filter(`Facility Type` %in% facilty_types) %>% 
+  count(`Facility Type`) %>% 
+  rename("count" = n) %>% 
+  gt()
+```
