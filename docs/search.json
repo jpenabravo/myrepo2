@@ -18,7 +18,7 @@
     "href": "2023-02-21_FLHealthFinder.html#load-data",
     "title": "Duval’s FloridaHealthFinder Data",
     "section": "Load data",
-    "text": "Load data\n\nfl_health_finder <- read_csv(\"data/2023-02-21_FloridaHealthFinder-FacilityLocator.csv\")"
+    "text": "Load data\n\nfl_health_finder <- read_csv(\"2023-02-21_FloridaHealthFinder-FacilityLocator.csv\")"
   },
   {
     "objectID": "2023-02-21_FLHealthFinder.html#create-table",
